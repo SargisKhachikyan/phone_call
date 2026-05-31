@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ios_phone_call/presentation/phone_main_screen/models/tab_enum.dart';
-import 'package:ios_phone_call/presentation/phone_main_screen/widgets/bottom_nav_item.dart';
+import 'package:ios_phone_call/presentation/phone_keypad_screen/models/tab_enum.dart';
+import 'package:ios_phone_call/presentation/phone_keypad_screen/widgets/bottom_nav_item.dart';
 
 class BottomNavnBar extends StatelessWidget {
   final ValueNotifier<BottomNavTabEnum> tabNotifier;

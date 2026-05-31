@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ios_phone_call/presentation/phone_main_screen/phone_main_screen.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:ios_phone_call/presentation/phone_keypad_screen/phone_main_screen.dart';
+import 'package:ios_phone_call/presentation/state/phone_bloc.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +15,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      home: const PhoneMainScreen(),
+      home: BlocProvider(
+        create: (context) => PhoneBloc(),
+        child: const PhoneMainScreen(),
+      ),
     );
   }
 }
