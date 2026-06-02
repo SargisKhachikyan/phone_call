@@ -21,7 +21,7 @@ class _NumbersFieldState extends State<NumbersField> {
           child: BlocBuilder<PhoneBloc, PhoneFieldState>(
             builder: (context, state) {
               return Text(
-                state.phoneNumber,
+                state.digits,
                 style: const TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,

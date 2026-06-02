@@ -29,11 +29,12 @@ class _PhoneMainScreenState extends State<PhoneMainScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final mainColor = const Color.fromARGB(255, 29, 29, 29);
     return ValueListenableBuilder<BottomNavTabEnum>(
       valueListenable: _tabNotifier,
       builder: (context, tab, child) {
         return Scaffold(
-          backgroundColor: const Color.fromARGB(255, 29, 29, 29),
+          backgroundColor: mainColor,
           appBar: CustomAppBar(tab: tab),
           body: Builder(builder: (context) {
             return Padding(
