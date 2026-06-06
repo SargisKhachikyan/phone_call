@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:ios_phone_call/presentation/phone_keypad_screen/widgets/calling_screen.dart';
 import 'package:ios_phone_call/presentation/state/phone_bloc.dart';
 import 'package:ios_phone_call/presentation/state/phone_bloc_events.dart';
 
@@ -17,6 +18,15 @@ class _PhoneCallButtonState extends State<PhoneCallButton> {
       padding: const EdgeInsets.only(bottom: 20),
       child: InkWell(
         onTap: () {
+          final phoneNumber = context.read<PhoneBloc>().state.digits;
+          if (phoneNumber.isEmpty) return;
+
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => CallingScreen(phoneNumber: phoneNumber),
+            ),
+          );
           context.read<PhoneBloc>().add(ClearPhoneField());
         },
         child: Container(
