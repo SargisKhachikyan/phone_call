@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ios_phone_call/presentation/state/phone_bloc.dart';
-import 'package:ios_phone_call/presentation/state/phone_bloc_state.dart';
+import 'package:ios_phone_call/presentation/phone_keypad_screen/state/phone_bloc.dart';
+import 'package:ios_phone_call/presentation/phone_keypad_screen/state/phone_bloc_state.dart';
 
 class NumbersField extends StatefulWidget {
   const NumbersField({super.key});
@@ -18,7 +18,7 @@ class _NumbersFieldState extends State<NumbersField> {
         Container(
           alignment: Alignment.center,
           height: 80,
-          child: BlocBuilder<PhoneBloc, PhoneFieldState>(
+          child: BlocBuilder<PhoneBloc, PhoneState>(
             builder: (context, state) {
               return Text(
                 state.digits,

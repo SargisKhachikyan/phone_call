@@ -1,15 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'package:ios_phone_call/presentation/phone_keypad_screen/state/phone_bloc.dart';
+import 'package:ios_phone_call/presentation/phone_keypad_screen/state/phone_bloc_events.dart';
 
 class CallingScreen extends StatefulWidget {
   final String phoneNumber;
 
-  const CallingScreen({super.key, required this.phoneNumber});
+  const CallingScreen({
+    super.key,
+    required this.phoneNumber,
+  });
 
   @override
   State<CallingScreen> createState() => _CallingScreenState();
 }
 
 class _CallingScreenState extends State<CallingScreen> {
+  void _endCall() {
+    context.read<PhoneBloc>().add(StopAudio());
+
+    Navigator.pop(context);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,20 +32,18 @@ class _CallingScreenState extends State<CallingScreen> {
           width: double.infinity,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Padding(
-                padding: EdgeInsets.only(top: 80),
+                padding: const EdgeInsets.only(top: 80),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.phone_in_talk,
                       size: 100,
                       color: Colors.green,
                     ),
-                    SizedBox(height: 20),
-                    Text(
+                    const SizedBox(height: 20),
+                    const Text(
                       'Calling',
                       style: TextStyle(
                         fontSize: 24,
@@ -56,9 +67,7 @@ class _CallingScreenState extends State<CallingScreen> {
               Padding(
                 padding: const EdgeInsets.only(bottom: 60),
                 child: IconButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
+                  onPressed: _endCall,
                   icon: const Icon(
                     Icons.call_end,
                     size: 50,
