@@ -27,7 +27,7 @@ final List<SinglePhoneCard> calls = [
     ),
     SinglePhoneCard(
       name: 'David',
-      lastName: 'Grigoryan',
+      lastName: 'Poxosyan',
       time: '14:45',
       isoutgoing: false,
     ),
