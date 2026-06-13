@@ -1,6 +1,7 @@
 import 'package:ios_phone_call/presentation/phone_keypad_screen/models/tab_enum.dart';
 import 'package:ios_phone_call/presentation/phone_keypad_screen/widgets/calls_app_bar.dart';
 import 'package:ios_phone_call/presentation/phone_keypad_screen/widgets/contacts_app_bar.dart';
+import 'package:ios_phone_call/presentation/phone_keypad_screen/widgets/keypad_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -23,7 +24,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 return ContactsAppBar(
                     title: BottomNavTabEnum.contacts.appBarTitle!);
               case BottomNavTabEnum.keypad:
-                return const SizedBox();
+                return KeypadAppBar(
+                  title: BottomNavTabEnum.keypad.appBarTitle!,
+                );
               default:
                 return Container();
             }
@@ -36,4 +39,3 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Size get preferredSize => Size.fromHeight(56);
 }
-
