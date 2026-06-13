@@ -5,8 +5,8 @@ import 'package:ios_phone_call/presentation/phone_keypad_screen/constants/digit_
 import 'package:ios_phone_call/presentation/phone_keypad_screen/widgets/numbers_buttons.dart';
 import 'package:ios_phone_call/presentation/phone_keypad_screen/widgets/numbers_field.dart';
 import 'package:ios_phone_call/presentation/phone_keypad_screen/widgets/phone_call_button.dart';
-import 'package:ios_phone_call/presentation/state/phone_bloc.dart';
-import 'package:ios_phone_call/presentation/state/phone_bloc_events.dart';
+import 'package:ios_phone_call/presentation/phone_keypad_screen/state/phone_bloc.dart';
+import 'package:ios_phone_call/presentation/phone_keypad_screen/state/phone_bloc_events.dart';
 
 class PhoneKeypadScreen extends StatefulWidget {
   const PhoneKeypadScreen({super.key});

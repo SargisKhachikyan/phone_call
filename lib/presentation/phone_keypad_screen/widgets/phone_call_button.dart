@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ios_phone_call/presentation/phone_keypad_screen/widgets/calling_screen.dart';
-import 'package:ios_phone_call/presentation/state/phone_bloc.dart';
-import 'package:ios_phone_call/presentation/state/phone_bloc_events.dart';
+import 'package:ios_phone_call/presentation/phone_keypad_screen/state/phone_bloc.dart';
+import 'package:ios_phone_call/presentation/phone_keypad_screen/state/phone_bloc_events.dart';
 
 class PhoneCallButton extends StatefulWidget {
   const PhoneCallButton({super.key});
